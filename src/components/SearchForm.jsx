@@ -11,7 +11,7 @@ const SearchForm = ({ onSearch }) => {
     <form className="max-w-sm mx-auto mt-10" onSubmit={handleSubmit}>
       <div className="flex items-center border-b-2 border-slate-950 py-2">
         <input
-          className="appearance-none bg-transparent border-none w-full text-black mr-3 py-1 px-2 leading-tight focus:outline-none"
+          className="appearance-none border-none w-full text-black mr-3 py-1 px-2 "
           type="text"
           placeholder="Ingrese una ciudad"
           value={location}
