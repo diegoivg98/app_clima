@@ -3,10 +3,13 @@ import { FaSearch } from "react-icons/fa";
 
 const SearchForm = ({ onSearch }) => {
   const [location, setLocation] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSearch(location);
+    setLoading(true);
+    await onSearch(location);
+    setLoading(false);
   };
 
   return (
@@ -27,6 +30,11 @@ const SearchForm = ({ onSearch }) => {
           Buscar
         </button>
       </div>
+      {loading && (
+        <div className="flex justify-center mt-3">
+          <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-gray-900"></div>
+        </div>
+      )}
     </form>
   );
 };
